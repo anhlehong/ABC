@@ -1,0 +1,45 @@
+@media only screen and (max-width: 600px) {
+    .popup__body{
+        width: 92vw;
+        max-height: 100%;
+        overflow-y:scroll;
+        overflow-x: hidden;
+    }
+    .popup__close{
+        width: 2.5rem;
+        height: 2.5rem;
+        transform: none;
+    }
+    .dialog__popup{
+        width: 100vw;
+        overflow-y:scroll ;
+        overflow-x:hidden ;
+    }
+    
+    #password__validation span{
+        font-size: 14px;
+    }
+    .password__invalid{
+        color: red;
+    }
+    .password__invalid::before{
+        content: '✖ ' ;
+        font-size: 15px;
+        position: relative;
+        left: -12px;
+    }
+
+
+    .password__valid{
+        color :green
+    }
+    .password__valid::before{
+        content: ' ✔' ;
+        font-size: 15px;
+        position: relative;
+        left: -12px;
+    }
+    .dialog__popup{
+        padding: 1rem;
+    }
+} 

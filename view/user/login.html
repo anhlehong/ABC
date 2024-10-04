@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <button id="open">click me</button>
+    <button id="login__log-out">logout</button>
+    <dialog id="dialog__sign-in" class="dialog__popup">
+        <form method="dialog">
+            <div class="popup">
+                <div class="popup__close">
+                    <span class="">✕</span>
+                </div>
+                <div class="popup__body">
+                    <div class="popup__title">
+                        <img src="https://mcdn.coolmate.me/image/March2024/mceclip4_81.jpg" alt="brand logo">
+                        <div class="popup__titleText">
+                            Rất nhiều đặc quyền và quyền lợi mua sắm đang chờ bạn
+                        </div>
+                    </div>
+                    <div class="popup__interest">
+                        <div class="popup__interestText">
+                            Quyền lợi dành riêng cho bạn khi tham gia Coolcub
+                        </div>
+                        <div class="popup__interestImg">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip3_52.jpg" alt="Voucher">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip1_36.jpg" alt="Presents">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip2_55.jpg" alt="Refund">
+                        </div>
+                    </div>
+                    <div action="" class="popup_signin">
+                        <div class="signin__heading" style="margin-top: 1rem;">
+                            Đăng nhập hoặc đăng ký (miễn phí)
+                        </div>
+                        <div class="signin__signinAuthenticate" style="margin: 1rem 0;">
+                            <button class=" signin__button--small Google-auth__sign-in" type="button">
+                                <span class="signin__img">
+                                    <img src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
+                                        alt="Goole authenticate">
+                                </span>
+                            </button>
+                            <button class="signin__button--small Facebook-auth__sign-in" style="margin-left: 0.5rem;" type="button">
+                                <span class="signin__img">
+                                    <img src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
+                                        alt="Facebook authenticate">
+                                </span>
+                            </button>
+                            <div class="sigin__line">
+                                <span>Hoặc</span>
+                            </div>
+                            <div class="login-area">
+                                <div class="login-area__group">
+                                    <input type="text" placeholder="Email của bạn"
+                                        class="login-area__username signin__button--large">
+                                    <span class="error-text error__username">Vui lòng nhập Email/SĐT của bạn</span>
+                                </div>
+                                <div class="login-area__group">
+                                    <div class="login__password" style="position: relative;">
+                                        <input type="password" placeholder="Mật khẩu"
+                                            class="login-area__password signin__button--large">
+                                        <i class="fa-regular fa-eye-slash password__icon"></i>
+                                    </div>
+                                    <span class="error-text error__password">Vui lòng nhập mật khẩu của bạn</span>
+                                </div>
+                                <div class="capsLock-error">
+                                    <i class="fa-solid fa-exclamation" style="color: red;"> </i>
+                                </div>
+                                <button class="login-area__submit signin__button--large" type='button'>Đăng nhập</button>
+                                <div class="error__invalid-user">
+                                    Xin lỗi, chúng tôi không tìm thấy tài khoản này trong hệ thống. Vui lòng đăng ký
+                                    hoặc xác minh tài khoản.
+                                </div>
+                                <div class="area__switch">
+                                    <a href="#" class="btn__switch switch__signup">Đăng ký tài khoản mới</a>
+                                    <a href="#" class="btn__switch switch__forgot-pass">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </form>
+    </dialog>
+
+
+
+    <dialog id="dialog__sign-up" class="dialog__popup">
+        <form method="dialog">
+            <div class="popup">
+                <div class="popup__close">
+                    <span class="">✕</span>
+                </div>
+                <div class="popup__body">
+                    <div class="popup__title">
+                        <img src="https://mcdn.coolmate.me/image/March2024/mceclip4_81.jpg" alt="brand logo">
+                        <div class="popup__titleText">
+                            Rất nhiều đặc quyền và quyền lợi mua sắm đang chờ bạn
+                        </div>
+                    </div>
+                    <div class="popup__interest">
+                        <div class="popup__interestText">
+                            Quyền lợi dành riêng cho bạn khi tham gia Coolcub
+                        </div>
+                        <div class="popup__interestImg">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip3_52.jpg" alt="Voucher">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip1_36.jpg" alt="Presents">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip2_55.jpg" alt="Refund">
+                        </div>
+                    </div>
+                    <div action="" class="popup_signin">
+                        <div class="signin__heading" style="margin-top: 1rem;">
+                            Đăng nhập hoặc đăng ký (miễn phí)
+                        </div>
+                        <div class="signin__signinAuthenticate" style="margin: 1rem 0;">
+                            <button class=" signin__button--small" type="button">
+                                <span class="signin__img Google-auth__sign-up">
+                                    <img src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
+                                        alt="Goole authenticate">
+                                </span>
+                            </button>
+                            <button class="signin__button--small Facebook-auth__sign-up" style="margin-left: 0.5rem;" type="button">
+                                <span class="signin__img">
+                                    <img src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
+                                        alt="Facebook authenticate">
+                                </span>
+                            </button>
+                            <div class="sigin__line">
+                                <span>Hoặc</span>
+                            </div>
+
+
+                            
+                            <div class="login-area">
+                                <div class="login-area__group" style="display: flex;justify-content:space-between">
+                                    <div class="login-area__group--small">
+                                        <input type="text" placeholder="Tên của bạn"
+                                        class="login-area__username signin__button--large input--focus signup__username">
+                                        <span class="error-text error-signup__username">Vui lòng nhập tên của bạn</span>
+                                    </div>
+                                    <div class="login-area__group--small">
+                                        <input type="text" placeholder="SĐT của bạn"
+                                        class="login-area__username signin__button--large input--focus signup__phone-number">
+                                        <span class="error-text error-signup__phone-number">SĐT không hợp lệ</span>
+                                    </div>
+                                </div>
+
+                                <div class="login-area__group">
+                                    <input type="text" placeholder="Email của bạn"
+                                        class="login-area__username signin__button--large input--focus signup__email">
+                                    <span class="error-text error-signup__email">Email không hợp lệ</span>
+                                </div>
+
+                                <div class="login-area__group">
+                                    <input type="password" placeholder="Mật khẩu"
+                                        class="login-area__username signin__button--large input--focus signup__password"
+                                    >
+                                    <span class="error-text error-signup__password">Vui lòng nhập mật khẩu của bạn</span>
+                                </div>
+                                <div id="password__validation">
+                                      <span id="letter" class="password__invalid">Chữ <b>thường</b></span>
+                                      <span id="capital" class="password__invalid">Chữ <b>hoa</b></span>
+                                      <span id="number" class="password__invalid"> <b>Số</b></span>
+                                      <span id="length" class="password__invalid">Tối thiểu <b>8 ký tự</b></span>
+                                </div>
+                                <div class="login-area__group">
+                                    <input type="password" placeholder="Nhập lại mật khẩu"
+                                        class="login-area__username signin__button--large input--focus signup__repassword">
+                                    <span class="error-text error-signup__repassword">Vui lòng nhập lại mật khẩu</span>
+                                </div>
+
+                                <div class="error__invalid-user">
+                                    Xin lỗi, chúng tôi không tìm thấy tài khoản này trong hệ thống. Vui lòng đăng ký
+                                    hoặc xác minh tài khoản.
+                                </div>
+                                <button class="signup-area__submit signin__button--large" type="button">Đăng ký</button>
+                                <div class="area__switch">
+                                    <a href="#" class="btn__switch switch__signin">Đăng nhập</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </form>
+    </dialog>
+
+
+    <dialog id="dialog__forgot-pass" class="dialog__popup">
+        <form method="dialog">
+            <div class="popup">
+                <div class="popup__close">
+                    <span class="">✕</span>
+                </div>
+                <div class="popup__body">
+                    <div class="popup__title title__forgot-pass">
+                        Cấp lại mật khẩu
+                    </div>
+
+                    <input type="text" placeholder="Email của bạn"
+                        class="signin__button--large input__forgot-pass">
+                    <span class="error-text error__forgot-pass">Vui lòng nhập Email/SĐT của bạn</span>
+                    <button class="login-area__submit signin__button--large forgot-pass__submit" type="button">Kiểm tra</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+</body>
+<script src="./../../bundle/css.bundle.js"></script>
+<script src="../../firebase/firebaseLoginSignupForgetpass.js" type="module"></script>
+<script src="../../public/js/popUpAction.js" type="module"></script>
+<script src="../../public/js/validateForm.js" type="module"></script>
+</html>

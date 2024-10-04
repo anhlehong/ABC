@@ -1,0 +1,2 @@
+This repo is improvement from [CNPM_Final]( https://github.com/binh1232004/CNPM_Final ) <br/> 
+Shout out to [Tuấn Anh]( https://github.com/lnta09 ), [Đắc Long]( https://github.com/daclong1706 ), [Hoài Trí]( https://github.com/trihoai08 ) for developing this project in the first place.

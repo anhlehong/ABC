@@ -1,0 +1,263 @@
+/* ___________________________________________________ <main> ___________________________________________________ */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.disableInforCart {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+main div.custom-color img {
+    max-width: 40px;
+    height: auto;
+}
+
+main #alternateRecipient-popup {
+    display: none;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+main input[type="number"]::-webkit-inner-spin-button,
+main input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+main label {
+    font-weight: 500;
+}
+
+main select:hover,
+main .left-container label:hover,
+main option:hover,
+main input:hover {
+    cursor: pointer;
+}
+
+main .custom-color {
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    transition: all 0.15s ease-in-out;
+    padding: 0.75rem;
+    position: relative;
+    opacity: 50%;
+}
+
+main .custom-color:hover,
+main .custom-color.active {
+    opacity: 100%;
+    border-color: #86b7fe;
+}
+
+main .custom-color .form-check-input {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+
+main div#showProduct {
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+main #deleteProduct:hover {
+    cursor: pointer;
+}
+
+main .align-checkbox-center {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+main .custom_padding_checkbox_allProduct {
+    padding-left: 33px;
+}
+
+main #showProduct img {
+    max-width: 100px;
+    min-width: 100px;
+}
+
+main #quantity {
+    pointer-events: none;
+}
+
+main .small-select {
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    width: 100px;
+    /* Giảm chiều rộng */
+}
+
+main .small-input-group {
+    width: 100px;
+    /* Giảm chiều rộng */
+}
+
+main .small-input-group .btn {
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    width: 30px;
+    /* Chiều rộng của nút */
+    border-color: #ced4da;
+    /* Màu border */
+}
+
+main .small-input-group .form-control {
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    width: 40px;
+    /* Chiều rộng của input */
+    border-left: 0;
+    border-right: 0;
+    border-color: #ced4da;
+    /* Màu border */
+}
+
+main .btn .fa-solid {
+    pointer-events: none;
+}
+
+main .btn:hover,
+main .btn:active {
+    background-color: black !important;
+    color: white !important;
+    border-color: black !important;
+}
+
+main #showProduct input[type="text"] {
+    pointer-events: none;
+}
+
+main #Pay_for_all_products {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    main .small-select {
+        width: 80px;
+        /* Giảm chiều rộng trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    main .small-input-group {
+        width: 80px;
+        /* Giảm chiều rộng trên màn hình nhỏ */
+    }
+
+    main .small-input-group .btn {
+        width: 25px;
+        /* Giảm chiều rộng của nút trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    main .small-input-group .form-control {
+        width: 30px;
+        /* Giảm chiều rộng của input trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+}
+
+@media (max-width: 991px) {
+    main .small-select {
+        padding: 5px;
+        font-size: 14px;
+        width: 100px;
+    }
+
+    main .small-input-group {
+        width: 100px;
+    }
+
+    main .small-input-group .btn {
+        padding: 5px;
+        font-size: 14px;
+        width: 30px;
+    }
+
+    main .small-input-group .form-control {
+        padding: 5px;
+        font-size: 14px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 370px) {
+    main .small-select {
+        width: 80px;
+        /* Giảm chiều rộng trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    main .small-input-group {
+        width: 80px;
+        /* Giảm chiều rộng trên màn hình nhỏ */
+    }
+
+    main .small-input-group .btn {
+        width: 25px;
+        /* Giảm chiều rộng của nút trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    main .small-input-group .form-control {
+        width: 30px;
+        /* Giảm chiều rộng của input trên màn hình nhỏ */
+        font-size: 12px;
+        padding: 3px;
+    }
+}
+
+/* Shimmer Effect CSS */
+main .shimmer {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+main .shimmer-container {
+    position: relative;
+    overflow: hidden;
+}
+
+main .shimmer-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}

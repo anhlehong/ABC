@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+login-area__submit
+body{
+    font-size: 14px
+}
+/* .popup{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+} */
+/*#dialog__sign-in::backdrop{
+    background-color: #4c4c4c;
+    opacity: 0.5;
+}
+#dialog__sign-in{
+    max-width: 560px;
+    width: 70vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 560px;
+}
+*/
+.dialog__popup::backdrop{
+    background-color: #4c4c4c;
+    opacity: 0.5;
+}
+.dialog__popup{
+    max-width: 560px;
+    width: 70vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 560px;
+}
+.popup__body{
+    background-color: white;
+    max-height:85vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+.popup__close  span {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.popup__close{
+    border: 1.125px solid #fff;
+    background-color: #000;
+    border-radius: 50%;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+   align-items: center; 
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    /* -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+.popup__title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 31px;
+    font-weight: 700;
+}
+.popup__interestText{
+    margin-top: 0.7rem;
+    margin-bottom: 0.3rem;
+}
+.popup__interestImg{
+    display: flex;
+    justify-content: space-between;
+}
+.popup__interestImg > img{
+    height: 28%;
+    width:  31%;
+}
+.signin__button--small {
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+.signin__img > img{
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    padding: 0.6rem;
+}
+.signin__siginAuthenticate {
+    margin: 0;
+}
+.signin__heading{
+    font-weight: 700;
+}
+.sigin__line {
+    text-align: center;
+    width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #f2f2f2; 
+   line-height: 0.1em;
+    margin: 10px 0 20px; 
+    margin-top: 30px;
+}
+.sigin__line span{
+    background:#fff; 
+    padding:0 10px; 
+    font-weight: 500;
+}
+.login-area{
+    margin-top: 1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+}
+.signin__button--large{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    font-size: 14px;
+    padding: 1rem;
+}
+.login-area__password:focus, .login-area__username:focus, .input--focus:focus{
+    outline: 1px solid darkblue;
+}
+.login__password i{
+    position: absolute;
+    top:1rem;
+    right:1rem;
+    font-size:1.5rem;
+    cursor: pointer;
+}
+.login-area__submit, .signup-area__submit{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    margin-bottom: 0.75rem
+}
+.login-area__submit:hover, .signup-area__submit:hover{
+    background-color: #f2f2f2;
+    color: black;
+}
+.login-area__group{
+    margin: 0.75rem 0;
+}
+.login-area__group--small{
+    width: 47%;
+}
+
+.error-text{
+    display: block;
+    padding: 0 1rem;
+    margin: 0.4rem 0;
+    color: red;
+    display: none
+}
+.capsLock-error{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    display: none;
+}
+.capsLock-error i::after{
+    content:" CAPS LOCK ĐANG BẬT";
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.area__switch{
+    margin-top: 0.4rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.btn__switch{
+    text-decoration: none;
+}
+.btn__switch:visited{
+    color: blue;
+}
+.error__invalid-user{
+    color: red;
+    margin: 0.5rem 0;
+    display: none;
+}
+
+#password__validation{
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  border-radius: 16px;
+  display: none;
+}
+#password__validation span {
+    width: 50%;
+    font-size: 18px
+}
+.password__invalid{
+    color: red;
+}
+.password__invalid::before{
+    content: '✖ ' ;
+    font-size: 19px;
+    position: relative;
+    left: -12px;
+}
+
+
+.password__valid{
+    color :green
+}
+.password__valid::before{
+    content: ' ✔' ;
+    font-size: 19px;
+    position: relative;
+    left: -12px;
+}
+.title__forgot-pass{
+    text-align:center
+}
+.input__forgot-pass{
+    margin: 1rem 0;
+}

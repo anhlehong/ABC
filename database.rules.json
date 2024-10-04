@@ -1,0 +1,20 @@
+
+// {
+//   "rules": {
+//     // These rules grant access to a node matching the authenticated
+// 		// user's ID from the Firebase auth token
+//     "users": {
+//       "$uid": {
+//         ".read": "$uid === auth.uid",
+//         ".write": "$uid === auth.uid"
+//       }
+//     }
+//   }
+// }
+
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}

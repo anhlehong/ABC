@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishBig</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="public/css/indexPage/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shark.png">
+    <link rel="stylesheet" href="search.css">
+</head>
+
+<body class="">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+    <div id="site-wrapper" class="site-wrapper">
+        <!-- Header and login -->
+        <header id="app">
+            <div class="container-fluid d-flex justify-content-between align-items-center"
+                style="padding-left: 64px; padding-right: 64px;">
+                <div class="d-none d-sm-flex">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><img src="images/logo-cm24-own-new.svg" alt="logo-cm24"
+                                    style="height: 14px;"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><img src="images/logo-84rising-own.svg" alt="logo-84spring"
+                                    style="height: 14px;"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><img src="images/logo-coolxprint.svg" alt="logo-cool"
+                                    style="height: 14px;"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-none d-sm-flex">
+                    <ul class="nav">
+                        <li class="nav-item d-none d-lg-block"><a href="#" class="nav-link">Tham gia FishClub</a></li>
+                        <li class="nav-item d-none d-lg-block"><a href="#" class="nav-link">Blog</a></li>
+                        <li class="nav-item d-none d-lg-block"><a href="#" class="nav-link">Trung tâm CSKH</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="index__log-in">Đăng nhập</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center bg-secondary topbar-promotion" style="height: 32px;">
+                <div>
+                    <a href="#" class="nav-link text-white d-flex">Nhập FISHTOP1 giảm 50K đơn từ 500K <img
+                            src="images/mceclip3_26.png" alt="khampha" style="height: 20px; margin-left: 5px;"></a>
+                </div>
+            </div>
+            <div class="container-fluid bg-dark" style="padding: 0 64px;">
+                <div class="row align-items-center">
+                    <div class="col-6 col-xl-2">
+                        <nav class="navbar navbar-expand-xl navbar-light">
+                            <a href="index.html" class="navbar-brand text-white d-none d-xl-block">FishBig</a>
+                            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarToggler">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </nav>
+                    </div>
+
+                    <!-- category -->
+                    <div class=" col-lg-6 d-none d-xl-flex ">
+                        <nav class="navbar navbar-expand-sm navbar-light" style="padding: 0;">
+                            <div class="collapse navbar-collapse" id="navbarToggler">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center" style="height: 56px;">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active text-white" href="#"
+                                            id="navbardropdownAoNam" aria-current="page" data-bs-toggle="dropdown">ÁO
+                                            NAM</a>
+                                        <ul class="dropdown-menu" id="dropdownAoNamMenu"
+                                            aria-labelledby="navbardropdownAoNam"></ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="#"
+                                            id="navbardropdownQuanNam" data-bs-toggle="dropdown">QUẦN NAM</a>
+                                        <ul class="dropdown-menu" id="dropdownQuanNamMenu"
+                                            aria-labelledby="navbardropdownQuanNam"></ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </nav>
+                    </div>
+
+                    <!-- Hết danh mục -->
+
+                    <!--Thanh tìm kiếm-->
+                    <div class="col-6 col-xl-4 d-flex align-items-center justify-content-end">
+                        <div class="header-actions-search d-none d-xl-block" style="width: 70%;">
+                            <form class="d-flex" id="search-form">
+                                <input class="form-control me-2" type="text" id="cloth-input" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
+                            </form>
+                        </div>
+                        <div class="header-actions-button">
+                            <!-- <a id="user__profile" href="./view/user/profile/user_profile_UI.html"><i class="fa-solid fa-user p-2 text-white"></i></a> -->
+                            <a id="user__profile"><i class="fa-solid fa-user p-2 text-white"
+                                    style="cursor: pointer;"></i></a>
+                        </div>
+                        <div class="icon-cart" style="cursor: pointer;">
+                            <i class="fa-solid fa-cart-shopping p-2 text-white"></i>
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <!-- Popup và modal cho thanh tìm kiếm -->
+
+
+
+                    <div class="cartTab">
+                        <h1 style="font-weight: bold;">Shopping Cart <br>
+                            <hr>
+                        </h1>
+                        <div class="listCart" style="margin-top: 30px;">
+                            <!---->
+                        </div>
+                        <div class="btn">
+                            <button class="close">CLOSE</button>
+                            <button class="makePayment">MAKE PAYMENT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Login -->
+        <dialog id="dialog__sign-in" class="dialog__popup">
+            <form method="dialog">
+                <div class="popup">
+                    <div class="popup__close">
+                        <span class="">✕</span>
+                    </div>
+                    <div class="popup__body">
+                        <div class="popup__title">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip4_81.jpg" alt="brand logo">
+                            <div class="popup__titleText">
+                                Rất nhiều đặc quyền và quyền lợi mua sắm đang chờ bạn
+                            </div>
+                        </div>
+                        <div class="popup__interest">
+                            <div class="popup__interestText">
+                                Quyền lợi dành riêng cho bạn khi tham gia Coolcub
+                            </div>
+                            <div class="popup__interestImg">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip3_52.jpg" alt="Voucher">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip1_36.jpg" alt="Presents">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip2_55.jpg" alt="Refund">
+                            </div>
+                        </div>
+                        <div action="" class="popup_signin">
+                            <div class="signin__heading" style="margin-top: 1rem;">
+                                Đăng nhập hoặc đăng ký (miễn phí)
+                            </div>
+                            <div class="signin__signinAuthenticate" style="margin: 1rem 0;">
+                                <button class=" signin__button--small Google-auth__sign-in" type="button">
+                                    <span class="signin__img">
+                                        <img src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
+                                            alt="Goole authenticate">
+                                    </span>
+                                </button>
+                                <!-- <button class="signin__button--small Facebook-auth__sign-in"
+                                    style="margin-left: 0.5rem;" type="button">
+                                    <span class="signin__img">
+                                        <img src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
+                                            alt="Facebook authenticate">
+                                    </span>
+                                </button> -->
+                                <div class="sigin__line">
+                                    <span>Hoặc</span>
+                                </div>
+                                <div class="login-area">
+                                    <div class="login-area__group">
+                                        <input type="text" placeholder="Email của bạn"
+                                            class="login-area__username signin__button--large">
+                                        <span class="error-text error__username">Vui lòng nhập Email/SĐT của bạn</span>
+                                    </div>
+                                    <div class="login-area__group">
+                                        <div class="login__password" style="position: relative;">
+                                            <input type="password" placeholder="Mật khẩu"
+                                                class="login-area__password signin__button--large">
+                                            <i class="fa-regular fa-eye-slash password__icon"></i>
+                                        </div>
+                                        <span class="error-text error__password">Vui lòng nhập mật khẩu của bạn</span>
+                                    </div>
+                                    <div class="capsLock-error">
+                                        <i class="fa-solid fa-exclamation" style="color: red;"> </i>
+                                    </div>
+                                    <button class="login-area__submit signin__button--large" type='button'>Đăng
+                                        nhập</button>
+                                    <div class="error__invalid-user">
+                                        Xin lỗi, chúng tôi không tìm thấy tài khoản này trong hệ thống. Vui lòng đăng ký
+                                        hoặc xác minh tài khoản.
+                                    </div>
+                                    <div class="area__switch">
+                                        <a href="#" class="btn__switch switch__signup">Đăng ký tài khoản mới</a>
+                                        <a href="#" class="btn__switch switch__forgot-pass">Quên mật khẩu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </form>
+        </dialog>
+
+
+
+        <dialog id="dialog__sign-up" class="dialog__popup">
+            <form method="dialog">
+                <div class="popup">
+                    <div class="popup__close">
+                        <span class="">✕</span>
+                    </div>
+                    <div class="popup__body">
+                        <div class="popup__title">
+                            <img src="https://mcdn.coolmate.me/image/March2024/mceclip4_81.jpg" alt="brand logo">
+                            <div class="popup__titleText">
+                                Rất nhiều đặc quyền và quyền lợi mua sắm đang chờ bạn
+                            </div>
+                        </div>
+                        <div class="popup__interest">
+                            <div class="popup__interestText">
+                                Quyền lợi dành riêng cho bạn khi tham gia Coolcub
+                            </div>
+                            <div class="popup__interestImg">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip3_52.jpg" alt="Voucher">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip1_36.jpg" alt="Presents">
+                                <img src="https://mcdn.coolmate.me/image/March2024/mceclip2_55.jpg" alt="Refund">
+                            </div>
+                        </div>
+                        <div action="" class="popup_signin">
+                            <div class="signin__heading" style="margin-top: 1rem;">
+                                Đăng nhập hoặc đăng ký (miễn phí)
+                            </div>
+                            <div class="signin__signinAuthenticate" style="margin: 1rem 0;">
+                                <button class=" signin__button--small" type="button">
+                                    <span class="signin__img Google-auth__sign-up">
+                                        <img src="https://mcdn.coolmate.me/image/September2023/mceclip1_21.png"
+                                            alt="Goole authenticate">
+                                    </span>
+                                </button>
+                                <!-- <button class="signin__button--small Facebook-auth__sign-up"
+                                    style="margin-left: 0.5rem;" type="button">
+                                    <span class="signin__img">
+                                        <img src="https://mcdn.coolmate.me/image/September2023/mceclip0_86.png"
+                                            alt="Facebook authenticate">
+                                    </span>
+                                </button> -->
+                                <div class="sigin__line">
+                                    <span>Hoặc</span>
+                                </div>
+
+
+
+                                <div class="login-area">
+                                    <div class="login-area__group" style="display: flex;justify-content:space-between">
+                                        <div class="login-area__group--small">
+                                            <input type="text" placeholder="Tên của bạn"
+                                                class="login-area__username signin__button--large input--focus signup__username">
+                                            <span class="error-text error-signup__username">Vui lòng nhập tên của
+                                                bạn</span>
+                                        </div>
+                                        <div class="login-area__group--small">
+                                            <input type="text" placeholder="SĐT của bạn"
+                                                class="login-area__username signin__button--large input--focus signup__phone-number">
+                                            <span class="error-text error-signup__phone-number">SĐT không hợp lệ</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="login-area__group">
+                                        <input type="text" placeholder="Email của bạn"
+                                            class="login-area__username signin__button--large input--focus signup__email">
+                                        <span class="error-text error-signup__email">Email không hợp lệ</span>
+                                    </div>
+
+                                    <div class="login-area__group">
+                                        <input type="password" placeholder="Mật khẩu"
+                                            class="login-area__username signin__button--large input--focus signup__password">
+                                        <span class="error-text error-signup__password">Vui lòng nhập mật khẩu của
+                                            bạn</span>
+                                    </div>
+                                    <div id="password__validation">
+                                        <span id="letter" class="password__invalid">Chữ <b>thường</b></span>
+                                        <span id="capital" class="password__invalid">Chữ <b>hoa</b></span>
+                                        <span id="number" class="password__invalid"> <b>Số</b></span>
+                                        <span id="length" class="password__invalid">Tối thiểu <b>8 ký tự</b></span>
+                                    </div>
+                                    <div class="login-area__group">
+                                        <input type="password" placeholder="Nhập lại mật khẩu"
+                                            class="login-area__username signin__button--large input--focus signup__repassword">
+                                        <span class="error-text error-signup__repassword">Vui lòng nhập lại mật
+                                            khẩu</span>
+                                    </div>
+
+                                    <div class="error__invalid-user">
+                                        Xin lỗi, chúng tôi không tìm thấy tài khoản này trong hệ thống. Vui lòng đăng ký
+                                        hoặc xác minh tài khoản.
+                                    </div>
+                                    <button class="signup-area__submit signin__button--large" type="button">Đăng
+                                        ký</button>
+                                    <div class="area__switch">
+                                        <a href="#" class="btn__switch switch__signin">Đăng nhập</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </form>
+        </dialog>
+
+
+        <dialog id="dialog__forgot-pass" class="dialog__popup">
+            <form method="dialog">
+                <div class="popup">
+                    <div class="popup__close">
+                        <span class="">✕</span>
+                    </div>
+                    <div class="popup__body">
+                        <div class="popup__title title__forgot-pass">
+                            Cấp lại mật khẩu
+                        </div>
+
+                        <input type="text" placeholder="Email của bạn" class="signin__button--large input__forgot-pass">
+                        <span class="error-text error__forgot-pass">Vui lòng nhập Email/SĐT của bạn</span>
+                        <button class="login-area__submit signin__button--large forgot-pass__submit" type="button">Kiểm
+                            tra</button>
+                    </div>
+                </div>
+            </form>
+        </dialog>
+        <!---->
+        <main class="container-fluid">
+            <!---->
+            <section class="homepage-banner mb-4">
+                <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/SUMMER_SALE.webp" class="d-block w-100" alt="Summer Sale">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/EXCOOL_BN.jpg" class="d-block w-100" alt="EXCOOL">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/DESKTOP_EX-DRY_BANNER.jpg" class="d-block w-100" alt="EX-DRY">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+            <!-- SAN PHAM TONG-->
+            <section class="homepage-products mb-4">
+                <div class="homepage-button">
+                    <div class="d-flex mb-3">
+                        <a href="#" class="btn btn-primary me-2">Sản phẩm mới</a>
+                        <a href="#" class="btn btn-outline-primary">Hàng HOT giá xịn</a>
+                    </div>
+                </div>
+
+                <div id="listProduct" class="listProduct container">
+                    <!-- <div class="item card align-items-center">
+                        <div class="">
+                            <img id="imageSP" class="card-img-top " src="images/ao/3.jpg" alt="">
+                        </div>
+                        <h2 id="nameSP">NAME PRODUCT</h2>
+                        <div id="priceSP" class="price">200.000</div>
+                        <button class="addCairt">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div> -->
+                </div>
+            </section>
+            <!--BANNER CHAY BO-->
+            <section class="homepage-banner mb-4">
+                <div class="d-flex flex-column position-relative">
+                    <div class="d-flex banner">
+                        <a href="#"><img src="images/mceclip2_67.jpg" class="img-fluid" alt="BST chạy bộ"></a>
+                    </div>
+                    <div class="d-flex ms-3 wordInBanner start-0 top-50 flex-column d-xl-block d-none ">
+                        <h1>Đồ Chạy Bộ</h1>
+                        <p>Trải nghiệm chưa từng có trong mỗi sải chân</p>
+                        <a id="btn-banner" href="#" class="btn btn-primary">Khám phá ngay</a>
+                    </div>
+                </div>
+            </section>
+            <!--SAN PHAM CHAY BO-->
+            <!--Thêm sản phẩm chạy bộ ở đây-->
+            <section id="runningProductsSection" class="homepage-products mb-4">
+                <!-- Products will be injected here -->
+            </section>
+            <!---->
+            <section class="homepage-brands">
+                <div class="d-flex brand container-fluid" style="padding-left: 64px;padding-right: 64px;">
+                    <a href="#">
+                        <img src="images/mceclip0_24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="row-cols-xl-2 d-flex  justify-content-around"
+                    style="padding-left: 64px;padding-right: 64px;margin-top: 4%;">
+                    <div class="d-flex row position-relative d-none d-lg-block">
+                        <div class="brands">
+                            <a href="#">
+                                <img src="images/mceclip19_56.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="brands-title top-50 start-0 translate-middle-y ">
+                            <p>CM24 - NƯỚC HOA NAM</p>
+                            <h1>MUA 1 ĐƯỢC 3</h1>
+                            <button class="btn-brand">KHÁM PHÁ NGAY</button>
+                        </div>
+                    </div>
+                    <div class="d-flex row position-relative d-none d-lg-block">
+                        <div class="brands ">
+                            <a href="#">
+                                <img src="images/mceclip18_53.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="brands-title top-50 start-0 translate-middle-y">
+                            <p>84RISING - STREETWEAR</p>
+                            <h1>DISNEY & FRIENDS</h1>
+                            <button class="btn-brand">KHÁM PHÁ NGAY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <footer style="margin-top: 100px;">
+            <div class="container-fluid bg-dark d-flex flex-column" style="padding-left: 64px;padding-right: 64px">
+                <div class="d-flex row " style="margin: 30px 0px;;">
+                    <div class="d-flex row row-cols-lg-3">
+                        <div class="d-flex flex-column">
+                            <h5 class="fs-5 text-white">Chúng tôi lắng nghe bạn!</h5>
+                            <p style="font-size: 12px;color: #999999;">Chúng tôi luôn trân trọng và mong đợi nhận được
+                                mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt
+                                hơn nữa </p>
+                            <button class="btn-footer">Đóng góp ý kiến</button>
+                        </div>
+                        <div class="d-flex">
+                            <div class="d-flex flex-column row-cols-lg-2" style="margin-left: 10px;">
+                                <div class="row" style="width: 100%;">
+                                    <div class="col-6" style="width: 75px;">
+                                        <div class="fs-2">
+                                            <i class="fa-solid fa-phone text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-white" style="width: 50%;">
+                                        Hotline <br>
+                                        0123456789 <br>
+                                        <b>&#40</b>6:00 - 18:00 <b>&#41</b>
+                                    </div>
+                                </div>
+                                <div class="row" style="width: 100%;">
+                                    <div class="col-6" style="width: 75px;">
+                                        <div class="fs-2">
+                                            <i class="fa-solid fa-envelope text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-white">
+                                        Email
+                                        0123456789@gmail.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center flex-row justify-content-between"
+                            style="margin-top: 5px;">
+                            <div class=""><i class="fa-brands fa-facebook text-white fs-1"></i></div>
+                            <div class=""><i class="fa-brands fa-youtube text-white fs-1"></i></div>
+                            <div class=""><i class="fa-brands fa-square-instagram text-white fs-1"></i></div>
+                            <div class=""><i class="fa-brands fa-tiktok text-white fs-1"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="color: white;">
+                <div class="d-flex row align-items-center justify-content-between" style="margin: 0px;">
+                    <div class="col-3 text-white">
+                        <p class="text-uppercase">CHÍNH SÁCH</p>
+                        <ul class="list-menu">
+                            <li class="li-menu"><a href="#" title="">Chính sách đổi trả 16 ngày</a></li>
+                            <li class="li-menu"><a href="#" title="">Chính sách khuyến mãi</a></li>
+                            <li class="li-menu"><a href="#" title="">Chính sách bảo mật</a></li>
+                            <li class="li-menu"><a href="#" title="">Chính sách giao hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 text-white" style="height:152px">
+                        <p class="text-uppercase">CHĂM SÓC KHÁCH HÀNG</p>
+                        <ul class="list-menu">
+                            <li class="li-menu"><a href="#" title="">Trải nghiệm mua sắm 100% hài lòng</a></li>
+                            <li class="li-menu"><a href="#" title="">Hỏi đáp - FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 text-white" style="height:152px">
+                        <p class="text-uppercase">TÀI LIỆU - TUYỂN DỤNG</p>
+                        <ul class="list-menu">
+                            <li class="li-menu"><a href="#" title="">Tuyển dụng</a></li>
+                            <li class="li-menu"><a href="#" title="">Đăng ký bản quyền</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 text-white" style="height:152px">
+                        <p class="text-uppercase">ĐỊA CHỈ LIÊN HỆ</p>
+                        <ul class="list-menu">
+                            <li class="li-menu"><a href="#" title="">Đoán xem</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr style="color: white;">
+                <div class="row d-flex" style="margin: 0px;">
+                    <div class="col end-footer">
+                        <p class="text-white">@CÔNG TY TNHH CNPM</p>
+                        <p class="text-white">Mã số doanh nghiệp: 0108617038. Giấy chứng nhận đăng ký doanh nghiệp do Sở
+                            Kế hoạch và Đầu tư TP Hà Nội cấp lần đầu ngày 20/02/2019.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <div id="cart-notification" class="alert fade show position-fixed" role="alert">
+        <div class="container-fluid">
+            <div class="row" style="font-size: 14px; font-weight: bold">
+                <p>Đã thêm vào giỏ hàng!</p>
+                <p>
+                    <hr style="margin: 15px 0px 15px 0px; width: 100%;">
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <img id="cart-notification-image" src="" alt="Product Image" class="card-img me-3"
+                            style="height: 50px; object-fit: cover;">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <span id="cart-notification-message " class="card-title"></span>
+                            <br>
+                            <p id="cart-notification-details" class="card-text mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 15px; margin-bottom: 5px;">
+                <p><button class="btn btn__cart-notification"><a href="pageCart.html">Xem giỏ hàng</a></button></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="alertPlaceholder" class="position-fixed top-0 end-0 p-3" style="z-index: 1100;"></div>
+
+    <div class="overlay" id="overlay"></div>
+    <!-- <div id = "homepage-products"></div> -->
+    <div class="size-chart-container" id="showSearch">
+        <div style="margin: 20px;">
+            <i class="fa-solid fa-xmark close-icon" id="closeSearch"></i>
+        </div>
+        <div id="search-results" class="listProduct container"></div>
+    </div>
+
+
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/66acb41d1601a2195b9fee0c/1i499v4ra';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</body>
+
+<script type="module" src="js/home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+<script src="./bundle/css.bundle.js"></script>
+<script src="./firebase/firebaseLoginSignupForgetpass.js" type="module"></script>
+<script src="./public/js/popUpAction.js" type="module"></script>
+<script src="./public/js/validateForm.js" type="module"></script>
+
+<script type="module" src="js/ProductManager.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./public/js/search.js" type="module" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+
+<script src="./redirect.js" type="module" defer></script>
+
+</html>
