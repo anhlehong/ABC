@@ -184,6 +184,7 @@ const btnSignupGoogle = document.getElementsByClassName(
     'Google-auth__sign-up',
 )[0];
 const providerGoogle = new GoogleAuthProvider();
+// have bugs is not consistent, can not checkout
 const googleAuth = () => {
     signInWithPopup(auth, providerGoogle)
         .then(async (result) => {
@@ -226,12 +227,16 @@ const googleAuth = () => {
             // ...
         });
 };
-btnSignupGoogle.addEventListener('click', googleAuth);
+btnSignupGoogle.addEventListener('click', () =>{
+    alert('Tính năng hiện đang phát triển')
+});
 //Sign in
 const btnSigninGoogle = document.getElementsByClassName(
     'Google-auth__sign-in',
 )[0];
-btnSigninGoogle.addEventListener('click', googleAuth);
+btnSigninGoogle.addEventListener('click', ()=>{
+    alert('Tính năng hiện đang phát triển')
+});
 //**********************Forget password**********************
 const sendEmailResetPass = () => {
     const strValForgetPassEmail = inputForgotpass.value;
