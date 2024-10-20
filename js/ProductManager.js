@@ -94,14 +94,14 @@ function createSubmenuItems(items, menuId, productManager) {
 
                 const newProduct = document.createElement('div');
                 newProduct.classList.add('item');
-                newProduct.dataset.id = pro.productID;
+                newProduct.dataset.id = pro.id;
 
                 newProduct.innerHTML = `
-                    <a href="detail.html?id=${pro.productID}">
+                    <a href="detail.html?id=${pro.id}">
                         <img class="card-img-top" src="${pro.imgURL}" alt="${pro.name}">
                     </a>
                     <h2>${pro.name}</h2>
-                    <div class="price" style="font-weight: bold;">${formatPrice(pro.price)}</div>
+                    <div class="price" style="font-weight: bold; text-align: center;">${formatPrice(pro.price)}</div>
                 `;
 
                 console.log(newProduct)

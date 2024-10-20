@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, get, query, orderByChild } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import Product from '../../js/models/product.js'
 
 // Cấu hình Firebase
 const firebaseConfig = {
@@ -26,66 +27,82 @@ function normalizeText(text) {
     return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+// Hàm lấy sản phẩm
+async function fetchProducts() {
+    const productRef = ref(db, 'Product');
+    const snapshot = await get(productRef);
+
+    if (!snapshot.exists()) {
+        console.log("No products found");
+        return;
+    }
+
+    const products = [];
+    snapshot.forEach(childSnapshot => {
+        const value = childSnapshot.val();
+        const product = new Product(
+            childSnapshot.key,
+            value.Name,
+            value.Price,
+            value.Images ? Object.values(value.Images)[0].ImgURL : '',
+            value.Category,
+            value.CreateDate,
+            value.Description,
+            value.Detail,
+            value.ProductID,
+            value.Promotion,
+            value.Size,
+            value.UpdateDate
+        );
+        products.push(product);
+    });
+
+    return products;
+}
+
 // Hàm tìm kiếm sản phẩm
 async function searchProducts(event) {
     event.preventDefault(); // Ngăn chặn form submit theo cách mặc định
 
     const input = normalizeText(document.getElementById('cloth-input').value.trim());
     const listProductHTML = document.getElementById('search-results');
-
+    
     if (input === '') {
         alert('Vui lòng nhập từ khóa tìm kiếm.');
         listProductHTML.innerHTML = ''; // Xóa kết quả trước đó
         return;
     }
 
-    const productsRef = ref(db, 'Product');
-    const q = query(
-        productsRef,
-        orderByChild('Name')
-    );
-
     try {
-        const snapshot = await get(q);
-        if (!snapshot.exists()) {
-            listProductHTML.innerHTML = '<p>Không tìm thấy sản phẩm nào.</p>';
-            showSearchResults();
-            return;
-        }
+        const products = await fetchProducts();
 
         listProductHTML.innerHTML = '';
 
-        const products = [];
-        snapshot.forEach(childSnapshot => {
-            products.push(childSnapshot.val());
-        });
-
         for (let value of products) {
-            const normalizedProductName = normalizeText(value.Name || '');
+            const normalizedProductName = normalizeText(value.name || '');
 
             if (!normalizedProductName.includes(input)) {
                 continue;
             }
 
             let amount = 0;
-            for (let amountSize of Object.values(value.Size)) {
+            for (let amountSize of Object.values(value.size)) {
                 amount += amountSize;
             }
             if (amount === 0) {
                 continue;
             }
 
-            console.log(value.Size);
             const newProduct = document.createElement('div');
             newProduct.classList.add('item');
-            newProduct.dataset.id = value.ProductID;
+            newProduct.dataset.id = value.id;
 
             newProduct.innerHTML = `
-                <a href="detail.html?id=${value.ProductID}">
-                    <img class="card-img-top" src="${value.Images ? Object.values(value.Images)[0].ImgURL : ''}" alt="${value.Name}">
+                <a href="detail.html?id=${value.id}">
+                    <img class="card-img-top" src="${value.imgURL}" alt="${value.name}">
                 </a>
-                <h2>${value.Name}</h2>
-                <div class="price" style="font-weight: bold;">${formatPrice(value.Price)}</div>
+                <h2>${value.name}</h2>
+                <div class="price" style="font-weight: bold; text-align: center;">${formatPrice(value.price)}</div>
             `;
 
             listProductHTML.appendChild(newProduct);
