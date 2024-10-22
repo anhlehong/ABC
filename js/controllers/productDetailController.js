@@ -6,7 +6,11 @@ class ProductDetailController {
     constructor() {
         this.view = new ProductDetailView();
         this.productId = this.getProductIdFromURL();
-        this.fetchProductDetails();
+    }
+
+    // Tách phương thức fetch ra để gọi nó sau khi controller được khởi tạo
+    async init() {
+        await this.fetchProductDetails();  // Chờ fetch dữ liệu sản phẩm hoàn tất
     }
 
     getProductIdFromURL() {
@@ -15,29 +19,34 @@ class ProductDetailController {
     }
 
     async fetchProductDetails() {
-        const productRef = FirebaseService.getRef(`Product/${this.productId}`);
-        const snapshot = await FirebaseService.getData(productRef);
-        console.log("this.productId: ", this.productId)
+        try {
+            const productRef = FirebaseService.getRef(`Product/${this.productId}`);
+            const snapshot = await FirebaseService.getData(productRef);
+            console.log("this.productId: ", this.productId);
 
-        if (snapshot.exists()) {
-            const productData = snapshot.val();
-            const product = new Product(
-                this.productId,
-                productData.Name,
-                productData.Price,
-                productData.Images ? Object.values(productData.Images)[0].ImgURL : '',
-                productData.Category,
-                productData.CreateDate,
-                productData.Description,
-                productData.Detail,
-                productData.ProductID,
-                productData.Promotion,
-                productData.Size,
-                productData.UpdateDate
-            );
-            this.view.renderProductDetails(product);
-        } else {
-            console.error('Product data not found in Firebase');
+            if (snapshot.exists()) {
+                const productData = snapshot.val();
+                const product = new Product(
+                    this.productId,
+                    productData.Name,
+                    productData.Price,
+                    productData.Images ? Object.values(productData.Images)[0].ImgURL : '',
+                    productData.Category,
+                    productData.CreateDate,
+                    productData.Description,
+                    productData.Detail,
+                    productData.ProductID,
+                    productData.Promotion,
+                    productData.Size,
+                    productData.UpdateDate
+                );
+                // Render chi tiết sản phẩm sau khi đã fetch dữ liệu
+                this.view.renderProductDetails(product);
+            } else {
+                console.error('Product data not found in Firebase');
+            }
+        } catch (error) {
+            console.error('Error fetching product details:', error);
         }
     }
 }
