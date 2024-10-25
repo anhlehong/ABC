@@ -22,6 +22,7 @@ class UserManager {
         this.db = getDatabase();
         this.auth = getAuth(this.app);
 
+
         this.ID = document.getElementById('IDInp');
         this.Email = document.getElementById('EmailInp');
         this.User = document.getElementById('UserInp');
