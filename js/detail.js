@@ -3,9 +3,11 @@ import ProductDetailController from './controllers/productDetailController.js';
 import { signInDialog } from '../public/js/popUpAction.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const cartController = new CartController();
+    // Khởi tạo ProductDetailController và chờ hoàn thành việc fetch dữ liệu
     const productDetailController = new ProductDetailController();
+    await productDetailController.init();  // Chờ cho dữ liệu được lấy và hiển thị
 
+    const cartController = new CartController();
     await cartController.init();  // Chờ cho việc khởi tạo hoàn thành
 
     document.getElementById('showSizeGuide').addEventListener('click', function () {
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const userId = localStorage.getItem('userID');
         return userId !== 'null';
     };
- 
+
     document.getElementById('sizeList').addEventListener('click', function (event) {
         // Kiểm tra nếu phần tử có attribute data-size
         if (event.target && event.target.dataset.size) {
