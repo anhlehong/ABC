@@ -20,9 +20,9 @@ class InvoiceImportManager {
     this.userDB.trackUserLogin();
     this.excelIpt.addEventListener('change', this.buyGoods.bind(this));
     this.infoBtn.addEventListener('click', this.exportExcelFile.bind(this));
-    this.addBtn.addEventListener('click', async () => {
-      const lstUsers = await this.userDB.getUserList();
-    });
+    // this.addBtn.addEventListener('click', async () => {
+    //   const lstUsers = await this.userDB.getUserList();
+    // });
     this.creatTableData();
     this.InforBtn.addEventListener('mouseover', () => {
       this.TxtInfor.style.display = 'inline-block';
@@ -171,11 +171,17 @@ class InvoiceImportManager {
         }
         let totalAmount = 0;
         const Items = {};
+        const currentProductId =  await this.productDB.getCurrentProductID();
         for (const item of sheetData) {
           //if product exist, store quantity of each size in variable for both productDB to be updated and invoiceImportDB to be set
           const amount = item[dataHeader.quantity] * item[dataHeader.unitPrice];
           totalAmount += amount;
           if (item[dataHeader.idsp]) {
+            if(item[dataHeader.idsp] > currentProductId){
+              alert('Sản phẩm mới ko được ghi ID')
+              return;
+            }
+
             // for invoice import db
             Items[`${item[dataHeader.idsp]}-${item[dataHeader.size]}`] = {
               Quantity: item[dataHeader.quantity],

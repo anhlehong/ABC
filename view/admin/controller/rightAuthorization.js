@@ -12,7 +12,6 @@ const Aside = document.getElementById('sidebar');
 const ToggleSideBar = document.getElementsByClassName('toggle-sidebar-btn')[0];
 ToggleSideBar.addEventListener('click', ()=>{
     const styleAside = getComputedStyle(Aside);
-    console.log(styleAside.left);
     if(Aside.style.left === "0px"){
         Aside.style.left = "-300px";
         return;

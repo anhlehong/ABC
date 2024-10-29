@@ -55,6 +55,13 @@ class SupplierManager {
         this.phoneInp.value = '';
         this.emailInp.value = '';
     }
+    isInpEmpty() {
+        return  !this.nameInp.value.trim() || 
+            !this.addreesInp.value.trim() || 
+            !this.ZIPInp.value.trim() || 
+            !this.phoneInp.value.trim() || 
+            !this.emailInp.value.trim();
+    }
     async addEventDeleteSupplier() {
         const dbref = ref(this.db);
         const runTransactionResult = await runTransaction(ref(this.db, 'SupplierCounter'), (counter) => {
@@ -78,6 +85,10 @@ class SupplierManager {
         });
     }
     async addEventAddSupplier() {
+        if(this.isInpEmpty()){
+            alert('Điền đầy đủ thông tin vào input');
+            return;
+        }
         const counterRef = ref(this.db, 'SupplierCounter');
         const runTransactionResult = await runTransaction(counterRef, (counter) => {
             return counter + 1;
@@ -98,6 +109,11 @@ class SupplierManager {
         })
     }
     async addEventUpdateSupplier() {
+        if(this.isInpEmpty()){
+            alert('Điền đầy đủ thông tin vào input');
+            return;
+        }
+            
         const dbref = ref(this.db);
         get(child(dbref, 'Supplier/' + this.IDInp.value)).then((snapshot) => {
             if (snapshot.exists()) {
