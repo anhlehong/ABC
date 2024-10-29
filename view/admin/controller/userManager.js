@@ -52,6 +52,13 @@ class UserManager {
         window.addEventListener('load', this.createTableData.bind(this));
         window.addEventListener('load', this.addOptionInRole.bind(this));
     }
+    isInpEmpty() {
+        return !this.Email.value.trim() || 
+            !this.User.value.trim() || 
+            !this.Address.value.trim() || 
+            !this.Phone.value.trim() || 
+            !this.Birth.value.trim();
+    }
     addOptionInRole() {
         for (let key in this.ROLE) {
             let option = document.createElement('option');
@@ -79,6 +86,10 @@ class UserManager {
         });
     }
     updateUser() {
+        if(this.isInpEmpty()){
+            alert('Điền đẩy đủ thông tin vào các trường dữ liệu');
+            return;
+        }
         let uid = this.ID.value;
         const today = new Date();
         const formattedDate = this.formatDateToDDMMYYYY(today);
@@ -178,6 +189,10 @@ class UserManager {
     }
 
     registerUser(evt) {
+        if(this.isInpEmpty()){
+            alert('Điền đẩy đủ thông tin vào các trường dữ liệu');
+            return;
+        }
         evt.preventDefault();
 
         const today = new Date();
